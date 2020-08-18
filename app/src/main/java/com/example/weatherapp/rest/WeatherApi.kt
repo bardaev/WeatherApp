@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface WeatherApi {
 
-    @Headers("X-Yandex-API-Key: paste your token")
+    @Headers("X-Yandex-API-Key: 5fc6a83c-b4ab-4a0f-9c99-bbbb876a2f82")
     @GET("/v2/forecast")
     fun getData(@Query("lat") lat: String,
                 @Query("lon") lon: String,

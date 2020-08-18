@@ -10,9 +10,9 @@ import retrofit2.Response
 class CallbackWeather(val viewModel: WeatherViewModel): Callback<WeatherModel> {
 
     override fun onResponse(call: Call<WeatherModel>, response: Response<WeatherModel>) {
-//        viewModel.getData().postValue(response.body()?.fact)
-//        viewModel.setData(response.body()?.fact)
-        Log.i("APIW", response.body()?.fact?.temp.toString())
+//        Log.i("APPP", "${response.body()?.fact?.temp}")
+//        Log.i("APPP", "${viewModel.}")
+//        viewModel.setData(response.body()?.fact!!)
     }
 
     override fun onFailure(call: Call<WeatherModel>, t: Throwable) {
