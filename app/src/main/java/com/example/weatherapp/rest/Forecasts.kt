@@ -6,33 +6,32 @@ import com.example.weatherapp.BR
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-//data class WeatherModel(@SerializedName("now") @Expose val now: Int)
-class WeatherModel: BaseObservable() {
+class Forecasts: BaseObservable() {
 
-    @SerializedName("now")
+    @SerializedName("date")
     @Expose
     @get:Bindable
-    var now: String? = null
+    var date: String? = null
         set(value) {
             field = value
-            notifyPropertyChanged(BR.now)
+            notifyPropertyChanged(BR.date)
         }
 
-    @SerializedName("fact")
+    @SerializedName("date_ts")
     @Expose
     @get:Bindable
-    var fact: Fact? = null
+    var date_ts: Int? = null
         set(value) {
             field = value
-            notifyPropertyChanged(BR.fact)
+            notifyPropertyChanged(BR.date_ts)
         }
 
-    @SerializedName("forecasts")
+    @SerializedName("hours")
     @Expose
     @get:Bindable
-    var forecasts: List<Forecasts>? = null
+    var hours: List<Fact>? = null
         set(value) {
             field = value
-            notifyPropertyChanged(BR.forecasts)
+            notifyPropertyChanged(BR.hours)
         }
 }

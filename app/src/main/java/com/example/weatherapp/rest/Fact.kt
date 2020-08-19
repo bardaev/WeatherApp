@@ -8,6 +8,24 @@ import com.google.gson.annotations.SerializedName
 
 class Fact: BaseObservable() {
 
+    @SerializedName("hour")
+    @Expose
+    @get:Bindable
+    var hour: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.hours)
+        }
+
+    @SerializedName("hour_ts")
+    @Expose
+    @get:Bindable
+    var hour_ts: Int? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.hour_ts)
+        }
+
     @SerializedName("temp")
     @Expose
     @get:Bindable
