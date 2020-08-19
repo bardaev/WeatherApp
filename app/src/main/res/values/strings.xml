@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WeatherApp</string>
-    <string name="city">Empty city</string>
+    <string name="city">SPB</string>
+    <string name="feels_like">Ощущается как: </string>
 </resources>

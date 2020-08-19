@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.weatherapp.rest.Fact
+import com.example.weatherapp.rest.InstanceApi
 import com.example.weatherapp.rest.WeatherModel
 import com.example.weatherapp.utils.CallbackWeather
 import retrofit2.Call
@@ -15,28 +16,17 @@ class WeatherViewModel: ViewModel() {
     private var data: MutableLiveData<Fact> = MutableLiveData()
 
     fun getData(): MutableLiveData<Fact> {
-        loadData()
-        Log.i("APIW", "getData ${data.value?.temp}")
+        val thread = Thread(
+            object : Runnable {
+                override fun run() {
+                    val response = App.getComponent().getRESTUtils().getData("60.039948", "30.252285", "ru_RU", "7", "true", "false").execute()
+                    data.postValue(response.body()?.fact)
+                }
+            }
+        )
+        thread.start()
+        thread.join()
         return data
     }
 
-    private fun loadData() {
-        App.getComponent()
-            .getRESTUtils()
-            .getData("60.039948", "30.252285", "ru_RU", "7", "true", "false")
-            .enqueue(
-                object : Callback<WeatherModel> {
-                    override fun onFailure(call: Call<WeatherModel>, t: Throwable) {}
-
-                    override fun onResponse(
-                        call: Call<WeatherModel>,
-                        response: Response<WeatherModel>
-                    ) {
-                        data.value = response.body()?.fact
-                        Log.i("APIW", "loadData ${data.value?.temp}")
-                    }
-                }
-            )
-
-    }
 }

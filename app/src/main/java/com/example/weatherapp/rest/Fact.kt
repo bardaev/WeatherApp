@@ -26,58 +26,102 @@ class Fact: BaseObservable() {
             notifyPropertyChanged(BR.feels_like)
         }
 
-    @Bindable
     @SerializedName("icon")
     @Expose
+    @get:Bindable
     var icon: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.icon)
+        }
 
-    @Bindable
     @SerializedName("condition")
     @Expose
+    @get:Bindable
     var condition: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.condition)
+        }
 
-    @Bindable
     @SerializedName("wind_speed")
     @Expose
-    var wind_speed: Int? = null
+    @get:Bindable
+    var wind_speed: Double? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.wind_speed)
+        }
 
-    @Bindable
     @SerializedName("pressure_mm")
     @Expose
+    @get:Bindable
     var pressure_mm: Int? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.pressure_mm)
+        }
 
-    @Bindable
     @SerializedName("humidity")
     @Expose
+    @get:Bindable
     var humidity: Int? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.humidity)
+        }
 
-    @Bindable
     @SerializedName("daytime")
     @Expose
+    @get:Bindable
     var daytime: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.daytime)
+        }
 
-    @Bindable
     @SerializedName("season")
     @Expose
+    @get:Bindable
     var season: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.season)
+        }
 
-    @Bindable
     @SerializedName("prec_type")
     @Expose
+    @get:Bindable
     var prec_type: Int? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.prec_type)
+        }
 
-    @Bindable
     @SerializedName("cloudness")
     @Expose
+    @get:Bindable
     var cloudness: Int? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.cloudness)
+        }
 
-    @Bindable
     @SerializedName("phenom_icon")
     @Expose
+    @get:Bindable
     var phenom_icon: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.phenom_icon)
+        }
 
-    @Bindable
     @SerializedName("phenom_condition")
     @Expose
+    @get:Bindable
     var phenom_condition: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.phenom_condition)
+        }
 }
