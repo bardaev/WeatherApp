@@ -1,8 +1,10 @@
-package com.example.weatherapp.rest
+package com.example.weatherapp.rest.weathermodel
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import com.example.weatherapp.BR
+import com.example.weatherapp.rest.weathermodel.Fact
+import com.example.weatherapp.rest.weathermodel.Forecasts
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

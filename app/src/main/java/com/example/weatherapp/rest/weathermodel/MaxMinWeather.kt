@@ -1,4 +1,4 @@
-package com.example.weatherapp.rest
+package com.example.weatherapp.rest.weathermodel
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -6,32 +6,32 @@ import com.example.weatherapp.BR
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Forecasts: BaseObservable() {
+class MaxMinWeather: BaseObservable() {
 
-    @SerializedName("date")
+    @SerializedName("temp_min")
     @Expose
     @get:Bindable
-    var date: String? = null
+    var temp_min: Int? = null
         set(value) {
             field = value
-            notifyPropertyChanged(BR.date)
+            notifyPropertyChanged(BR.temp_min)
         }
 
-    @SerializedName("date_ts")
+    @SerializedName("temp_max")
     @Expose
     @get:Bindable
-    var date_ts: Int? = null
+    var temp_max: Int? = null
         set(value) {
             field = value
-            notifyPropertyChanged(BR.date_ts)
+            notifyPropertyChanged(BR.temp_max)
         }
 
-    @SerializedName("hours")
+    @SerializedName("icon")
     @Expose
     @get:Bindable
-    var hours: List<Fact>? = null
+    var icon: String? = null
         set(value) {
             field = value
-            notifyPropertyChanged(BR.hours)
+            notifyPropertyChanged(BR.icon)
         }
 }

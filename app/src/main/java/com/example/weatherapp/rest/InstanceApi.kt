@@ -12,5 +12,13 @@ class InstanceApi {
                 .build()
             return retrofit.create(WeatherApi::class.java)
         }
+
+        fun getGeocodeApi(): GeocodeApi {
+            val retrofit = Retrofit.Builder()
+                .baseUrl("https://geocode-maps.yandex.ru")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            return retrofit.create(GeocodeApi::class.java)
+        }
     }
 }

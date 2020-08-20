@@ -1,4 +1,4 @@
-package com.example.weatherapp.rest
+package com.example.weatherapp.rest.weathermodel
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -141,5 +141,12 @@ class Fact: BaseObservable() {
         set(value) {
             field = value
             notifyPropertyChanged(BR.phenom_condition)
+        }
+
+    @get:Bindable
+    var city: String? = null
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.city)
         }
 }
